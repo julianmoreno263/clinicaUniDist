@@ -1,9 +1,9 @@
-import { Doctor } from "../models/Doctor.js"
+
 
 
 const paginaInicio = async (req, res) => {
 
-    res.render("Inicio", {
+    res.render("inicio", {
         pagina: "Doctores"
     })
 }

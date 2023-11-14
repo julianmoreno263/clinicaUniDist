@@ -6,42 +6,44 @@ block contenido
         .row 
             .col-md-5 
                 img(src="img/pacientes.jpg", width='400px',class="img-fluid")
-            .col-md-7
-                <form>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Nombres</label>
-                    <input type="text" class="form-control" id="nombres" placeholder="Nombres">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Apellidos</label>
-                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Documento de identidad</label>
-                    <input type="text" class="form-control" id="documento" placeholder="Documento de identidad">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Edad</label>
-                    <input type="text" class="form-control" id="edad" placeholder="Edad">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-                </div>
+            .col-md-7           
+                form(action="/" method="POST") 
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder="Nombre", name="nombres", class="form-control") 
 
-                <div> 
-                    <select class="form-control form-control">
-                    <option>Especialidad</option>
-                    <option>Medicina General</option>
-                    <option>Medicina Interna</option>
-                    <option>Dermatología</option>
-                    <option>Rehabilitación física</option>
-                    <option>Psicología</option>
-                    <option>Odontología</option>
-                    <option>Radiología</option>
-                    </select>
-                </div>
+                        .form-group 
+                            label(for="correo") Apellido
+                            input#nombre(type="text", placeholder="Apellido", name="apellidos", class="form-control")
 
-                <button type="submit" class="btn btn-primary mt-2">Registrar Paciente</button>
-                </form>
-            
+                        .form-group 
+                            label(for="correo") Documento de identidad 
+                            input#nombre(type="text", placeholder="Documento", name="documento", class="form-control") 
+
+                        .form-group 
+                            label(for="correo") Edad 
+                            input#nombre(type="text", placeholder="Edad", name="edad", class="form-control")
+                            
+                        .form-group 
+                            label(for="especialidad") Especialidad 
+                            <select class="form-control form-control" name="especialidad"  >
+                                <option>Especialidad</option>
+                                <option>Medicina General</option>
+                                <option>Medicina Interna</option>
+                                <option>Dermatología</option>
+                                <option>Rehabilitación física</option>
+                                <option>Psicología</option>
+                                <option>Odontología</option>
+                                <option>Radiología</option>
+                            </select>
+                        
+                        .form-group 
+                            label(for="correo") Teléfono 
+                            input#nombre(type="text", placeholder="Teléfono", name="telefono", class="form-control") 
+                        
+                        input.btn.btn-success.btn-block(type="submit")
+                        
+
+
+
+

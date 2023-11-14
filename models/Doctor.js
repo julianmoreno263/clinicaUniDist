@@ -3,6 +3,7 @@ import db from "../config/db.js";
 
 //modelo de Doctor
 export const Doctor = db.define("doctor", {
+
     nombre: {
         type: Sequelize.STRING
     },
@@ -15,4 +16,8 @@ export const Doctor = db.define("doctor", {
     especialidad: {
         type: Sequelize.STRING
     }
-});
+
+}, {
+    freezeTableName: true,
+}
+);
