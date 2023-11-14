@@ -1,28 +1,19 @@
 import express from "express"
+import { paginaInicio, paginaPacientes, paginaCitas } from "../controllers/paginasControllers.js"
+import { guardarDoctor } from "../controllers/doctorController.js"
 
 
 const router = express.Router()
 
-router.get("/", (req, res) => {
+router.get("/", paginaInicio)
+router.post("/", guardarDoctor)
 
-    res.render("Inicio", {
-        pagina: "Doctores"
-    })
-})
+router.get("/pacientes", paginaPacientes)
 
-router.get("/pacientes", (req, res) => {
+router.get("/citas", paginaCitas)
 
-    res.render("pacientes", {
-        pagina: "Pacientes"
-    })
-})
 
-router.get("/citas", (req, res) => {
 
-    res.render("citas", {
-        pagina: "Citas"
-    })
-})
 
 
 export default router
