@@ -9,12 +9,12 @@ block contenido
             .col-md-7
                 form(action="/" method="POST")
                     .form-group 
-                        label(for="nombre") Nombre del paciente 
-                        input#nombre(type="text", placeholder="Nombre", name="nombrePaciente", class="form-control") 
+                        label(for="nombrePaciente") Nombre del paciente 
+                        input#nombre(type="text", placeholder="Nombre", name="nombrePaciente", class="form-control", required) 
 
                     .form-group 
                         label(for="nombreDoctor") Nombre del Doctor
-                        input#nombre(type="text", placeholder="Apellido", name="nombreDoctor", class="form-control")
+                        input#nombre(type="text", placeholder="Apellido", name="nombreDoctor", class="form-control", required)
                     .form-group 
                         label(for="especialidad") Especialidad 
                         <select class="form-control form-control" name="especialidad"  >
@@ -30,7 +30,7 @@ block contenido
 
                     .form-group 
                         label(for="documento") Documento de identidad 
-                        input#nombre(type="text", placeholder="Documento", name="documento", class="form-control") 
+                        input#nombre(type="text", placeholder="Documento", name="documento", class="form-control", required) 
                         
                     input.btn.btn-success.btn-block(type="submit")
                         

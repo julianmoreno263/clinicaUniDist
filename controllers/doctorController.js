@@ -6,12 +6,14 @@ const guardarDoctor = async (req, res) => {
     const { nombres, apellidos, email, especialidad, consultorio } = req.body
     //almacenar en la bd
     try {
+
         await Doctor.create({
             nombres,
             apellidos,
             email,
             especialidad,
-            consultorio
+            consultorio,
+
         })
         res.redirect("/")
 

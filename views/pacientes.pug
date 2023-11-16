@@ -9,20 +9,20 @@ block contenido
             .col-md-7           
                 form(action="/" method="POST") 
                         .form-group 
-                            label(for="nombre") Nombre 
-                            input#nombre(type="text", placeholder="Nombre", name="nombres", class="form-control") 
+                            label(for="nombres") Nombre 
+                            input#nombre(type="text", placeholder="Nombre", name="nombres", class="form-control", required) 
 
                         .form-group 
-                            label(for="correo") Apellido
-                            input#nombre(type="text", placeholder="Apellido", name="apellidos", class="form-control")
+                            label(for="apellidos") Apellido
+                            input#nombre(type="text", placeholder="Apellido", name="apellidos", class="form-control", required)
 
                         .form-group 
-                            label(for="correo") Documento de identidad 
-                            input#nombre(type="text", placeholder="Documento", name="documento", class="form-control") 
+                            label(for="documento") Documento de identidad 
+                            input#nombre(type="text", placeholder="Documento", name="documento", class="form-control", required) 
 
                         .form-group 
-                            label(for="correo") Edad 
-                            input#nombre(type="text", placeholder="Edad", name="edad", class="form-control")
+                            label(for="edad") Edad 
+                            input#nombre(type="text", placeholder="Edad", name="edad", class="form-control", required)
                             
                         .form-group 
                             label(for="especialidad") Especialidad 
@@ -38,8 +38,8 @@ block contenido
                             </select>
                         
                         .form-group 
-                            label(for="correo") Teléfono 
-                            input#nombre(type="text", placeholder="Teléfono", name="telefono", class="form-control") 
+                            label(for="email") Teléfono 
+                            input#nombre(type="text", placeholder="Teléfono", name="telefono", class="form-control", required) 
                         
                         input.btn.btn-success.btn-block(type="submit")
                         

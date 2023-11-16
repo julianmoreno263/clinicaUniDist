@@ -4,11 +4,16 @@ block contenido
     main.container.mt-5 
         h1= pagina
 
-        .col-md-12
-            if(errores)
-                each error in errores
-                    .alert.col.alert-danger.text-center=error.mensaje
+        h3.text-center Nuestros doctores
 
+        .row
+            each doctor in doctores      
+                .col-md-6.col-lg-4.mb4 
+                    .card 
+                        .card-body
+                            blockquote.blockquote
+                                p= JSON.stringify(doctores)
+                                                                   
 
         .row 
             .col-md-5 
@@ -16,12 +21,12 @@ block contenido
             .col-md-7
                 form(action="/" method="POST") 
                         .form-group 
-                            label(for="nombre") Nombre 
-                            input#nombre(type="text", placeholder="Nombre", name="nombres", class="form-control", value=nombres) 
+                            label(for="nombres") Nombre 
+                            input#nombre(type="text", placeholder="Nombre", name="nombres", class="form-control", required) 
 
                         .form-group 
-                            label(for="correo") Apellido
-                            input#nombre(type="text", placeholder="Apellido", name="apellidos", class="form-control",value=apellidos )
+                            label(for="apellidos") Apellido
+                            input#nombre(type="text", placeholder="Apellido", name="apellidos", class="form-control", required )
 
                         .form-group 
                             label(for="especialidad") Especialidad 
@@ -37,12 +42,12 @@ block contenido
                             </select>
 
                         .form-group 
-                            label(for="correo") Consultorio 
-                            input#nombre(type="text", placeholder="Consultorio", name="consultorio", class="form-control",value=consultorio) 
+                            label(for="consultorio") Consultorio 
+                            input#nombre(type="text", placeholder="Consultorio", name="consultorio", class="form-control", required) 
 
                         .form-group 
-                            label(for="correo") Email 
-                            input#nombre(type="text", placeholder="Email", name="email", class="form-control",value=email) 
+                            label(for="email") Email 
+                            input#nombre(type="text", placeholder="Email", name="email", class="form-control", required) 
                         
                         input.btn.btn-success.btn-block(type="submit")
                         
