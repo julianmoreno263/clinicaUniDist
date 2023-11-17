@@ -2,24 +2,21 @@ import { Sequelize } from "sequelize";
 import db from "../config/db.js";
 
 //modelo de Paciente
-export const Paciente = db.define("paciente", {
-    documento: {
-        type: Sequelize.INTEGER,
+export const Cita = db.define("cita", {
+    fecha: {
+        type: Sequelize.DATE,
         primaryKey: true,
     },
-    nombres: {
+    nombrePaciente: {
         type: Sequelize.STRING
     },
-    apellidos: {
-        type: Sequelize.STRING
-    },
-    telefono: {
+    nombreDoctor: {
         type: Sequelize.STRING
     },
     especialidad: {
         type: Sequelize.STRING
     },
-    edad: {
+    documento: {
         type: Sequelize.INTEGER
     }
 

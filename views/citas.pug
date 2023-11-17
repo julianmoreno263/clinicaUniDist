@@ -3,18 +3,37 @@ extends ./layout/index
 block contenido
     main.container.mt-5 
         h1= pagina
-        .row 
+
+        h3.text-center Citas asignadas
+        
+        .row.doctores
+            
+            each cita in citas      
+                .col-md-6.col-lg-4.mb2
+                    .card 
+                        .card-body
+                            blockquote.blockquote
+                                p.mb-0
+                                    h6 Fecha: #{JSON.stringify(cita.fecha)}
+                                    h6 Nombre del paciente: #{JSON.stringify(cita.nombrePaciente)}
+                                    h6 Nombre del doctor: #{JSON.stringify(cita.nombreDoctor)}
+                                    h6 Especialidad: #{JSON.stringify(cita.especialidad)}
+                                    h6 Documento del paciente: #{JSON.stringify(cita.documento)}
+                                footer.blockquote-footer
+                                    h6 Paciente: #{JSON.stringify(cita.nombrePaciente)}  
+
+        .row.mt-5
             .col-md-5 
                 img(src="img/citas.jpg", width='400px',class="img-fluid")
             .col-md-7
-                form(action="/" method="POST")
+                form(action="/citas" method="POST")
                     .form-group 
                         label(for="nombrePaciente") Nombre del paciente 
-                        input#nombre(type="text", placeholder="Nombre", name="nombrePaciente", class="form-control", required) 
+                        input#nombre(type="text", placeholder="Nombre del paciente", name="nombrePaciente", class="form-control", required) 
 
                     .form-group 
-                        label(for="nombreDoctor") Nombre del Doctor
-                        input#nombre(type="text", placeholder="Apellido", name="nombreDoctor", class="form-control", required)
+                        label(for="nombreDoctor") Nombre del doctor
+                        input#nombre(type="text", placeholder="Nombre del doctor", name="nombreDoctor", class="form-control", required)
                     .form-group 
                         label(for="especialidad") Especialidad 
                         <select class="form-control form-control" name="especialidad"  >
@@ -29,8 +48,12 @@ block contenido
                         </select>
 
                     .form-group 
-                        label(for="documento") Documento de identidad 
-                        input#nombre(type="text", placeholder="Documento", name="documento", class="form-control", required) 
+                        label(for="documento") Documento del paciente 
+                        input#nombre(type="text", placeholder="Documento del paciente", name="documento", class="form-control", required) 
+                    
+                    .form-group 
+                        <label for="fecha">Fecha</label>
+                        <input type="date", id="fecha",  name="fecha",  class="form-control"> 
                         
                     input.btn.btn-success.btn-block(type="submit")
                         

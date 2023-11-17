@@ -3,7 +3,7 @@ import { Paciente } from "../models/Paciente.js";
 
 const guardarPaciente = async (req, res) => {
 
-    const { nombres, apellidos, telefono, edad, especialidad, id_numeroCedula } = req.body
+    const { nombres, apellidos, telefono, edad, especialidad, documento } = req.body
     //almacenar en la bd
     try {
 
@@ -13,7 +13,7 @@ const guardarPaciente = async (req, res) => {
             telefono,
             edad,
             especialidad,
-            id_numeroCedula
+            documento
 
         })
         res.redirect("/pacientes")

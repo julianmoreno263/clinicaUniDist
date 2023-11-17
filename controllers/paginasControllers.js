@@ -1,6 +1,8 @@
 
 import { Doctor } from "../models/Doctor.js"
 import { Paciente } from "../models/Paciente.js"
+import { Cita } from "../models/Cita.js"
+
 
 
 const paginaInicio = async (req, res) => {
@@ -36,11 +38,20 @@ const paginaPacientes = async (req, res) => {
     }
 }
 
-const paginaCitas = (req, res) => {
+const paginaCitas = async (req, res) => {
 
-    res.render("citas", {
-        pagina: "Citas"
-    })
+    try {
+        //traemos los pacientes de la bd
+        const citas = await Cita.findAll()
+
+        res.render("citas", {
+            pagina: "Citas",
+            citas
+
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
