@@ -2,22 +2,30 @@ extends ./layout/index
 
 block contenido
     main.container.mt-5 
-        h1= pagina
+        h1= pagina  
 
         h3.text-center Nuestros doctores
-
-        .row
+        
+        .row.doctores
+            
             each doctor in doctores      
-                .col-md-6.col-lg-4.mb4 
+                .col-md-6.col-lg-4.mb2
                     .card 
                         .card-body
                             blockquote.blockquote
-                                p= JSON.stringify(doctores)
+                                p.mb-0
+                                    h6 Nombres: #{JSON.stringify(doctor.nombres)}
+                                    h6 Apellidos: #{JSON.stringify(doctor.apellidos)}
+                                    h6 Email: #{JSON.stringify(doctor.email)}
+                                    h6 Especialidad: #{JSON.stringify(doctor.especialidad)}
+                                    h6 Consultorio: #{JSON.stringify(doctor.consultorio)}
+                                footer.blockquote-footer
+                                    h6 Doctor: #{JSON.stringify(doctor.nombres)}                               
                                                                    
 
-        .row 
-            .col-md-5 
-                img(src="img/img1.jpg", width='400px',class="img-fluid")
+        .row.mt-5 
+            .col-md-5
+                img(src="img/img1.jpg", width='400px', class="img-fluid")
             .col-md-7
                 form(action="/" method="POST") 
                         .form-group 

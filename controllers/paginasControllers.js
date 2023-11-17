@@ -1,6 +1,6 @@
 
 import { Doctor } from "../models/Doctor.js"
-
+import { Paciente } from "../models/Paciente.js"
 
 
 const paginaInicio = async (req, res) => {
@@ -9,13 +9,10 @@ const paginaInicio = async (req, res) => {
         //traemos los doctores de la bd
         const doctores = await Doctor.findAll()
 
-        console.log(doctores)
-
-
-
         res.render("inicio", {
             pagina: "Doctores",
             doctores
+
         })
     } catch (error) {
         console.log(error)
@@ -23,11 +20,20 @@ const paginaInicio = async (req, res) => {
 
 }
 
-const paginaPacientes = (req, res) => {
+const paginaPacientes = async (req, res) => {
 
-    res.render("pacientes", {
-        pagina: "Pacientes"
-    })
+    try {
+        //traemos los pacientes de la bd
+        const pacientes = await Paciente.findAll()
+
+        res.render("pacientes", {
+            pagina: "Pacientes",
+            pacientes
+
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 const paginaCitas = (req, res) => {
